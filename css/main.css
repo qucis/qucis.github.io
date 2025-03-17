@@ -1,0 +1,63 @@
+html{
+    font-family: SF Pro;
+}
+
+body{
+    margin: 0;
+}
+
+#main{
+    padding: 30px;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1{
+    color: white;
+    letter-spacing: .06rem;
+}
+.Logo{
+    display: flex;
+    font-size: 30px;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 6px;
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: auto;
+    margin: 5 px 25px;
+}
+
+.title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    -webkit-text-stroke: 1px #000000;
+    line-height: 0.65;
+
+}
+
+.small-text {
+    font-size: 40px; /* Make "to" smaller */
+    display: block;
+    text-align: center;
+}
+
+.big-text {
+    font-size: 50px; /* Make "to" smaller */
+    display: block;
+    text-align: center;
+}
