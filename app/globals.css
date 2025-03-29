@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+.contact_btn{
+  display: flex;
+  padding: 10px 25px;
+  justify-content: center;
+  align-items: center;
+  gap: 27px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.contact_btn:hover{
+  background: white;
+  color: #9717E5;
+}
+
+.mainHeading{
+  color: #FFF;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -1.28px;
+}
+
+.paraContent{
+  color: rgba(217, 217, 217, 0.97);
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+font-size: 20px;
+line-height: 33.6px; /* 140% */
+letter-spacing: 0.48px;
+}
+
+.main_btn a{
+  background: radial-gradient( #5C2178, #AE0DBC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mainHeading span{
+  background: linear-gradient(118deg, #E94636 75.4%, #DF4138 104.95%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-size: 128px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -1.28px;
+}
+
+.teamHeading{
+  background: linear-gradient(180deg, #DE97FF -10.33%, #640093 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-shadow: 0px 0px 4px rgba(0, 0, 0); */
+/* font-size: 96px; */
+font-weight: 800;
+font-family: 'Albert Sans';
+line-height: normal;
+}
+
+.secondHeading{
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.secondPara{
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  font-style: normal;
+  font-weight: 200;
+  letter-spacing: 0.48px; 
+}
+
+.paraFonts{
+  /* font-family: 'Source Sans 3', sans-serif; */
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  font-weight: 200;
+}
+
+nav ul li{
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 600;
+}
+
+nav ul li:not(.contact_btn):hover{
+  color: #da9fff;
+}
+
+.carousel{
+  width: 200px;
+}
+.carousel_bg{
+  background: radial-gradient(577.45% 142.61% at 0% 0%, rgba(43, 16, 56, 0.53) 0%, #5C2178 0.01%, rgba(49, 18, 63, 0.93) 52.08%, rgba(92, 33, 120, 0.92) 100%);
+
+}
+
+
+
+
+.active{
+  color: #DE97FF;
+}
+
+.heroContainer{
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('/quantum-image.jpg');
+  background-size: cover;
+  
+}
