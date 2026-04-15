@@ -30,8 +30,10 @@ yarn-error.log*
 .env*.local
 
 # sandbox/export artifacts
-*CodeSandbox*
-*sandbox*
+members/*CodeSandbox*
+members/*CodeSandbox_files/*
+public/members/*CodeSandbox*
+public/members/*CodeSandbox_files/*
 
 # vercel
 .vercel
