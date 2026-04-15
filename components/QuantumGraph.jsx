@@ -92,7 +92,7 @@ export default function OrbitalSpheres() {
       ctx.scale(o.tiltX, o.tiltY);
       ctx.beginPath();
       ctx.ellipse(0, 0, o.orbitR, o.orbitR, 0, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(${o.color.r},${o.color.g},${o.color.b},0.08)`;
+      ctx.strokeStyle = `rgba(${o.color.r},${o.color.g},${o.color.b},0.16)`;
       ctx.lineWidth = 1;
       ctx.stroke();
       ctx.restore();
@@ -119,8 +119,8 @@ export default function OrbitalSpheres() {
         pos.x, pos.y, SPHERE_RADIUS * fact
       );
       const { r, g, b } = o.color;
-      glow.addColorStop(0,   `rgba(${r},${g},${b},${boosted || o.isPanicked ? 0.55 : 0.25})`);
-      glow.addColorStop(0.5, `rgba(${r},${g},${b},0.08)`);
+      glow.addColorStop(0,   `rgba(${r},${g},${b},${boosted || o.isPanicked ? 0.7 : 0.45})`);
+      glow.addColorStop(0.5, `rgba(${r},${g},${b},0.12)`);
       glow.addColorStop(1,   `rgba(${r},${g},${b},0)`);
       ctx.beginPath();
       ctx.arc(pos.x, pos.y, SPHERE_RADIUS * fact, 0, Math.PI * 2);
@@ -134,9 +134,9 @@ export default function OrbitalSpheres() {
         0,
         pos.x, pos.y, SPHERE_RADIUS
       );
-      grad.addColorStop(0,   `rgba(255,255,255,${boosted || o.isPanicked ? 0.95 : 0.8})`);
-      grad.addColorStop(0.3, `rgba(${r},${g},${b},${boosted || o.isPanicked ? 1 : 0.85})`);
-      grad.addColorStop(1,   `rgba(${Math.max(0,r-60)},${Math.max(0,g-60)},${Math.max(0,b-60)},0.7)`);
+      grad.addColorStop(0,   `rgba(255,255,255,${boosted || o.isPanicked ? 1 : 0.95})`);
+      grad.addColorStop(0.3, `rgba(${r},${g},${b},1)`);
+      grad.addColorStop(1,   `rgba(${Math.max(0,r-80)},${Math.max(0,g-80)},${Math.max(0,b-80)},0.85)`);
       ctx.beginPath();
       ctx.arc(pos.x, pos.y, SPHERE_RADIUS, 0, Math.PI * 2);
       ctx.fillStyle = grad;

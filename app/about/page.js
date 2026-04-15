@@ -9,7 +9,8 @@ const About = () => {
         <div className="text-center mb-16">
           <span className="text-[12px] font-semibold tracking-[0.2em] text-cyan-600 uppercase">Who We Are</span>
           <h1 className="font-unbounded font-extrabold text-4xl md:text-6xl text-slate-900 mt-4 leading-[1.15]">
-            Quantum Computing &amp;<br />Information Systems
+            <span className="text-cyan-600">Qu</span>antum <span className="text-cyan-600">C</span>omputing &amp;<br />
+            <span className="text-cyan-600">I</span>nformation <span className="text-cyan-600">S</span>ystems
           </h1>
           <div className="mt-4 h-1 w-16 bg-gradient-to-r from-cyan-500 to-teal-400 mx-auto rounded-full"></div>
         </div>
@@ -17,7 +18,7 @@ const About = () => {
         {/* Content Card */}
         <div className="bg-white/70 backdrop-blur-sm border border-cyan-100 rounded-2xl p-8 md:p-12 shadow-sm space-y-6">
           <p className="font-asans text-slate-700 text-base md:text-lg leading-relaxed">
-            Welcome to the <strong className="text-cyan-700">Quantum Computing and Information Systems (QuCIS) Lab!</strong> At QuCIS, 
+            Welcome to the <strong className="text-cyan-700"><span className="text-cyan-600">Qu</span>antum <span className="text-cyan-600">C</span>omputing and <span className="text-cyan-600">I</span>nformation <span className="text-cyan-600">S</span>ystems (QuCIS) Lab!</strong> At QuCIS, 
             we are dedicated to pushing the boundaries of quantum information and exploring 
             the frontiers of quantum computation. Our research delves into the most cutting-edge 
             aspects of this transformative field — from quantum error correction and quantum algorithms 
