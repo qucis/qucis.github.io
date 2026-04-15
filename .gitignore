@@ -26,7 +26,14 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
+
+# sandbox/export artifacts
+members/page.tsx*CodeSandbox*
+members/page.tsx*CodeSandbox_files/*
+public/members/page.tsx*CodeSandbox*
+public/members/page.tsx*CodeSandbox_files/*
 
 # vercel
 .vercel
