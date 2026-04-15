@@ -1,33 +1,36 @@
 import React from 'react'
-// import GalleryGrid from '@/components/GalleryGrid'
 import dynamic from 'next/dynamic'
-import Background from '@/components/Background'
-import Transition from '@/components/Transition'
 
 const QCMC = dynamic(() => import('@/components/QCMCphotos'), { ssr: false })
 const IISCFujitsu = dynamic(() => import('@/components/IISCFujitsuphotos'), { ssr: false })
 
 const Gallery = () => {
   return (
-    <div>
-      <Background>
-    <div className='min-h-screen w-full h-full py-24 text-white text-4xl '>
-      <Transition>
-        <div className='grid place-items-center justify-center'>
-        <h1 className=' mt-24 teamHeading text-[48px] md:text-[64px] text-white drop-shadow-lg'>
-              IISC-Fujitsu Workshop at Bangalore
-              </h1>
+    <div className='min-h-screen w-full py-32 px-6'>
+      <div className='max-w-5xl mx-auto'>
+        <div className="text-center mb-16">
+          <span className="text-[12px] font-semibold tracking-[0.2em] text-cyan-600 uppercase">Photo Gallery</span>
+          <h1 className='font-unbounded font-bold text-4xl md:text-5xl text-slate-900 mt-4'>Moments</h1>
+        </div>
+
+        <div className='flex flex-col gap-20'>
+          <div>
+            <h2 className='font-unbounded font-bold text-2xl md:text-3xl text-slate-800 mb-8 border-l-4 border-cyan-500 pl-4'>
+              IISC-Fujitsu Workshop, Bangalore
+            </h2>
             <IISCFujitsu />
-            <h1 className=' mt-24 teamHeading text-[48px] md:text-[64px] drop-shadow-lg'>
-              QCMC 2024 at IIT Madras
-              </h1>
+          </div>
+          <div>
+            <h2 className='font-unbounded font-bold text-2xl md:text-3xl text-slate-800 mb-8 border-l-4 border-cyan-500 pl-4'>
+              QCMC 2024, IIT Madras
+            </h2>
             <QCMC />
-            </div>
-      </Transition>
-    </div>
-      </Background>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
 
 export default Gallery
+

@@ -1,14 +1,21 @@
-import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 const HeroAboutContainer = () => {
   return (
     <>
-        <div className="w-full py-12 min-h-screen relative  grid place-items-center">
-          {/* <div className='absolute w-[44%] h-full bg-gradient-to-br from-violet-400 to-purple-600 top-0 left-0 z-[-1]'></div> */}
-          <div className=" w-[80%] py-12 flex md:flex-row flex-col justify-around items-center gap-32 ">
-            <div className='w-[300px] h-[300px] lg:w-[500px] rounded-[24px] lg:h-[600px] bg-[url(/imgs/1.jpg)] bg-cover shadow-[15px_15px_0px_0px_rgba(0,0,20)]'></div>
-            <div className="md:w-[50%] flex flex-col gap-6 ">
-              <h1 className="font-unbounded font-bold  relative  text-[40px] md:text-6xl  text-black/80">
+        <div className="w-full py-12 min-h-screen relative grid place-items-center">
+          <div className="w-[80%] py-12 px-8 flex md:flex-row flex-col justify-around items-center gap-16 lg:gap-32 glass-panel">
+            <div className='relative w-[300px] h-[300px] lg:w-[450px] rounded-[24px] lg:h-[550px] shadow-2xl border border-white/10 overflow-hidden'>
+              <Image 
+                src="/imgs/1.jpg" 
+                alt="Quantum Information Lab" 
+                fill 
+                style={{objectFit: "cover"}} 
+                priority 
+              />
+            </div>
+            <div className="md:w-[50%] flex flex-col gap-6">
+              <h1 className="font-unbounded font-bold relative text-[40px] md:text-6xl text-slate-100">
                 Our Mission, Our Vision
        
                     <svg className='absolute -top-44  hidden lg:block -right-24' width='400' height='400' xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlnssvgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800">
@@ -24,7 +31,7 @@ const HeroAboutContainer = () => {
 
               </h1>
             
-              <p className="font-asans md:text-lg text-gray-500    text-[15px]">
+              <p className="font-asans md:text-lg text-slate-300 text-[15px] leading-relaxed">
               we are dedicated to push the boundaries of quantum information and exploring 
               the frontiers of quantum computation. We delve into the most cutting-edge 
               aspects of quantum error correction, quantum algorithms,

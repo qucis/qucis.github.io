@@ -37,89 +37,61 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className=" font-asans z-[100] top-0 absolute left-0 px-12 w-full h-[15vh]   flex justify-between items-center  text-lg font-regular ">
-        <div
-          className={` font-asans font-bold text-[32px] ${
-            path === "/" ? "text-[#DE97FF]" : "text-white/80"
-          }`}
-        >
-          <Link href="/">QuCIS</Link>
-        </div>
-        {/* {isDesktop ? ( */}
-        <ul className=" flex flex-col lg:flex-row gap-6 text-md font-regular font-asans items-center  lg:visible invisible">
-          <li
-            className={` ${
-              path === "/about" ? "text-purple-400" : "text-white/80"
+      <nav className="font-asans z-[100] top-0 absolute left-0 px-6 w-full h-[15vh] flex justify-center text-lg font-regular">
+        <div className="w-full max-w-5xl flex justify-between items-center">
+          <div
+            className={`font-unbounded font-bold text-[28px] ${
+              path === "/" ? "text-cyan-600" : "text-cyan-700"
             }`}
           >
+            <Link href="/">QuCIS</Link>
+          </div>
+        <ul className="flex flex-col lg:flex-row gap-6 text-sm font-medium font-asans items-center lg:visible invisible">
+          <li className={path === "/about" ? "text-cyan-600" : "text-slate-600 hover:text-cyan-500 transition-colors"}>
             <Link href="/about">About</Link>
           </li>
-          <li
-            className={` ${path === "/team" ? "text-[#DE97FF]" : "text-white/80"}`}
-          >
+          <li className={path === "/team" ? "text-cyan-600" : "text-slate-600 hover:text-cyan-500 transition-colors"}>
             <Link href="/team">Team</Link>
           </li>
-          <li
-            className={` ${
-              path === "/publications" ? "text-[#DE97FF]" : "text-white/80"
-            }`}
-          >
+          <li className={path === "/publications" ? "text-cyan-600" : "text-slate-600 hover:text-cyan-500 transition-colors"}>
             <Link href="/publications">Publications</Link>
           </li>
-
-          <li
-            className={` ${
-              path === "/funding" ? "text-[#DE97FF]" : "text-white/80"
-            }`}
-          >
+          <li className={path === "/funding" ? "text-cyan-600" : "text-slate-600 hover:text-cyan-500 transition-colors"}>
             <Link href="/funding">Funding</Link>
           </li>
-          <li
-            className={` ${
-              path === "/gallery" ? "text-[#DE97FF]" : "text-white/80"
-            }`}
-          >
+          <li className={path === "/gallery" ? "text-cyan-600" : "text-slate-600 hover:text-cyan-500 transition-colors"}>
             <Link href="/gallery">Moments</Link>
           </li>
-          <li
-            className={` ${
-              path === "/resources" ? "text-[#DE97FF]" : "text-white/80"
-            }`}
-          >
-            <Link href="/resources">Career and Opportunities</Link>
+          <li className={path === "/resources" ? "text-cyan-600" : "text-slate-600 hover:text-cyan-500 transition-colors"}>
+            <Link href="/resources">Career & Opportunities</Link>
           </li>
           <Link href="/contact">
-            <li
-              className={`contact_btn rounded-[16px] cursor-pointer transition-all ${
-                path === "/contact"
-                  ? "bg-white text-[#9717E5]"
-                  : "text-white/80 bg-[#9717E5]"
-              }`}
-            >
+            <li className={`contact_btn rounded-[12px] cursor-pointer transition-all text-sm ${
+              path === "/contact" ? "bg-cyan-700 text-white" : "text-white bg-cyan-600 hover:bg-cyan-700"
+            }`}>
               Contact
             </li>
           </Link>
         </ul>
-        {/*  ) : ( */}
-
-        {/*  )} */}
-        <div className=" lg:invisible visible absolute right-12">
-          <GiHamburgerMenu
-            color="#fff"
-            onClick={() => setShowMenu(!showMenu)}
-          />
+          {/*  )} */}
+          <div className="lg:invisible visible absolute right-8">
+            <GiHamburgerMenu
+              className="text-cyan-600 text-2xl"
+              onClick={() => setShowMenu(!showMenu)}
+            />
+          </div>
         </div>
       </nav>
 
       <div
-        className={`bg-violet-700  z-[100] px-6 py-6 absolute h-[100vh] top-[-100vh] left-0 w-full origin-top ${
+        className={`bg-cyan-700  z-[100] px-6 py-6 absolute h-[100vh] top-[-100vh] left-0 w-full origin-top ${
           showMenu ? "top-[0vh]" : "top-[-100vh]"
         } transition-all  z-10 ease-linear`}
       >
         <div className="p-4  flex items-center justify-between ">
           <h1
             className={`font-asans font-bold text-[32px] drop-shadow-lg ${
-              path === "/about" ? "text-black" : "text-white/80"
+              path === "/" ? "text-white" : "text-white/80"
             }`}
           >
             <Link onClick={() => setShowMenu(!showMenu)} href="/">
@@ -135,7 +107,7 @@ export default function Navbar() {
           <ul className="text-white/80 font-asans   text-lg tracking-wide grid gap-2">
             <li
               className={` ${
-                path === "/about" ? "text-[#DE97FF]" : "text-white/80"
+                path === "/about" ? "text-cyan-200" : "text-white/80"
               }`}
             >
               <Link onClick={() => setShowMenu(!showMenu)} href="/about">
@@ -145,7 +117,7 @@ export default function Navbar() {
 
             <li
               className={` ${
-                path === "/publications" ? "text-[#DE97FF]" : "text-white/80"
+                path === "/publications" ? "text-cyan-200" : "text-white/80"
               }`}
             >
               <Link onClick={() => setShowMenu(!showMenu)} href="/publications">
@@ -154,7 +126,7 @@ export default function Navbar() {
             </li>
             <li
               className={` ${
-                path === "/team" ? "text-[#DE97FF]" : "text-white/80"
+                path === "/team" ? "text-cyan-200" : "text-white/80"
               }`}
             >
               <Link onClick={() => setShowMenu(!showMenu)} href="/team">
@@ -163,7 +135,7 @@ export default function Navbar() {
             </li>
             <li
               className={` ${
-                path === "/funding" ? "text-[#DE97FF]" : "text-white/80"
+                path === "/funding" ? "text-cyan-200" : "text-white/80"
               }`}
             >
               <Link onClick={() => setShowMenu(!showMenu)} href="/funding">
@@ -172,17 +144,17 @@ export default function Navbar() {
             </li>
             <li
               className={` ${
-                path === "/gallery" ? "text-[#DE97FF]" : "text-white/80"
+                path === "/gallery" ? "text-cyan-200" : "text-white/80"
               }`}
             >
-              <Link href="/gallery">Moments</Link>
+              <Link onClick={() => setShowMenu(!showMenu)} href="/gallery">Moments</Link>
             </li>
             <li
               className={` ${
-                path === "/resources" ? "text-[#DE97FF]" : "text-white/80"
+                path === "/resources" ? "text-cyan-200" : "text-white/80"
               }`}
             >
-              <Link href="/resources">Career and Opportunities</Link>
+              <Link onClick={() => setShowMenu(!showMenu)} href="/resources">Career and Opportunities</Link>
             </li>
           </ul>
 
@@ -190,9 +162,9 @@ export default function Navbar() {
             <button
               className={`${
                 path === "/contact"
-                  ? "bg-white text-[#9717E5]"
-                  : "text-white/80 bg-[#9717E5]"
-              } mt-10 w-full py-3 rounded-full text-lg font-bold font-asans`}
+                  ? "bg-white text-cyan-700"
+                  : "text-white/80 bg-cyan-600"
+              } mt-10 w-full py-3 rounded-[12px] text-lg font-bold font-asans`}
             >
               Contact Us
             </button>

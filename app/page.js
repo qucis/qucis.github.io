@@ -1,45 +1,27 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-import Preloader from "@/components/Preloader";
-import { preLoaderAnim } from "@/animations";
-
 import HeroContainer from "@/components/HeroContainer";
-import HeroAboutContainer from "@/components/HeroAboutContainer";
-import HeroTeamContainer from "@/components/HeroTeamContainer";
-import News from "@/components/News";
-import LandingCarousel from "@/components/LandingCarousel";
+import LatestUpdates from "@/components/LatestUpdates";
+
+export const metadata = {
+  title: "QuCIS - Quantum Computing and Information Systems Lab",
+  description: "Explore the frontiers of quantum computation, quantum error correction, and quantum networks with Dr. Ankur Raina and the QuCIS team.",
+  openGraph: {
+    title: "QuCIS - Quantum Information Research Lab",
+    description: "Pioneering the future of Quantum Information Research.",
+    url: "https://qucis.in",
+    siteName: "QuCIS",
+  }
+};
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-
-  //   const timer = setTimeout(() => {
-  //     setLoading(false);
-  //   }
-  //   , 5000);
-
-  //   return () => clearTimeout(timer);
-  // })
-  const ref = useRef(null);
   return (
     <>
-      {/* {loading ? <Preloader /> :  */}
       <main>
+        {/* FIRST SECTION: Welcome & Mission */}
         <HeroContainer />
 
-        {/* SECOND SECTION  */}
-        <HeroAboutContainer />
-        <HeroTeamContainer />
-
-        <News />
-
-        {/* FOURTH SECTION */}
-        {/* CAROUSEL SECTION */}
-        <LandingCarousel />
+        {/* SECOND SECTION: Latest Lab Updates */}
+        <LatestUpdates />
       </main>
-      {/* } */}
     </>
   );
 }

@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import { ReactSVG } from "react-svg";
 import { createRoot } from "react-dom/client";
 
@@ -37,25 +39,29 @@ const HeroTeamContainer = () => {
   return (
     <div
       ref={container}
-      className="w-full overflow-hidden relative py-24 md:p-0 md:py-[200px]  grid place-items-center"
+      className="w-full overflow-hidden relative py-24 md:p-0 md:py-[200px] grid place-items-center"
     >
-      <div className="  w-[80%]  flex md:flex-row  flex-col-reverse justify-around  gap-12 items-center ">
-        <img
-          src="illustrations/sssquiggly1.svg"
-          className="svg absolute lg:block hidden opacity-50 -right-48 rotate-[160deg] h-[500px] w-[600px] z-[-1]"
+      <div className="w-[80%] p-8 md:p-12 flex md:flex-row flex-col-reverse justify-around gap-12 items-center glass-panel relative">
+        <Image
+          src="/illustrations/sssquiggly1.svg"
+          alt="Squiggly illustration"
+          width={600}
+          height={500}
+          className="svg absolute lg:block hidden opacity-50 -right-48 rotate-[160deg] z-[-1]"
+          priority
         />
 
-        <div className="md:w-[50%] flex flex-col  gap-6   ">
-          <h1 className="text-black/80 font-unbounded font-bold text-[40px] md:text-6xl  ">
+        <div className="md:w-[50%] flex flex-col gap-6">
+          <h1 className="text-slate-100 font-unbounded font-bold text-[40px] md:text-6xl">
             Our Team
           </h1>
-          <p className=" text-[20px] mt-6 md:text-lg  text-black/80 font-asans">
+          <p className="text-[20px] mt-6 md:text-lg text-slate-300 font-asans leading-relaxed">
           We are a group of quantum enthusiasts, consisting of graduate and undergraduate students, 
           led by Dr. Ankur Raina. We are conducting some exciting research in the field of quantum information. 
           Be sure to check out our work and recent news to stay up-to-date with our latest developments.
           </p>
           <Link href="/team">
-            <button className="text-purple/80 border-2 border-purple-200  shadow-lg  bg-white text-purple-500 font-bold rounded-[16px] px-4 py-2  gap-4  font-asans flex items-center hover:bg-purple-100 hover:shadow-xl transition-all">
+            <button className="border border-[var(--primary-accent)] shadow-lg bg-[var(--primary-accent)] text-white font-bold rounded-[16px] px-6 py-3 gap-4 font-asans flex items-center hover:bg-[var(--primary-hover)] hover:shadow-[0_4px_15px_rgba(110,86,207,0.4)] transition-all">
               Know Us
               <svg
                 width="9"
@@ -66,7 +72,7 @@ const HeroTeamContainer = () => {
               >
                 <path
                   d="M2 2L7 7L2 12"
-                  stroke="rgb(126,34,206)"
+                  stroke="#ffffff"
                   strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -75,7 +81,15 @@ const HeroTeamContainer = () => {
             </button>
           </Link>
         </div>
-        <div className="lg:w-[500px] lg:h-[600px] object-center rounded-xl border-2 border-gray-600  w-[250px] h-[300px] bg-[url(/members/AnkurRaina.jpeg)] bg-cover   shadow-[15px_15px_0px_0px_rgba(0,0,0,0.8)]"></div>
+        <div className="relative lg:w-[450px] lg:h-[550px] w-[250px] h-[300px] rounded-[24px] border border-white/10 shadow-2xl overflow-hidden">
+          <Image 
+            src="/members/AnkurRaina.jpeg" 
+            alt="Dr. Ankur Raina" 
+            fill 
+            style={{objectFit: "cover", objectPosition: "center"}} 
+            loading="lazy" 
+          />
+        </div>
       </div>
     </div>
   );
