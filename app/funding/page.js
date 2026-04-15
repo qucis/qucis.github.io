@@ -18,7 +18,7 @@ const FundingPage = () => {
             key={fund.id}
             className="flex items-center justify-center flex-col gap-5 p-6 bg-white/70 backdrop-blur-sm border border-cyan-100 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all w-full"
           >
-            <figure className="border border-cyan-100 p-3 rounded-xl bg-white shadow grid place-items-center w-[110px] h-[110px] md:w-[130px] md:h-[130px]">
+            <figure className="border border-cyan-100 p-3 rounded-xl bg-white shadow grid place-items-center w-[120px] h-[120px] md:w-[136px] md:h-[136px]">
               <Image
                 src={fund.img}
                 alt={fund.title}
