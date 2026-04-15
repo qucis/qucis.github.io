@@ -1,11 +1,7 @@
-import React from 'react'
 import Spinner from '@/components/Spinner'
-const loading = () => {
-  return (
-    <div>
-      <Spinner />
-    </div>
-  )
+
+const Loading = () => {
+  return <Spinner />
 }
 
-export default loading
+export default Loading

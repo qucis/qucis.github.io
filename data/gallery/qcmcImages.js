@@ -1,0 +1,18 @@
+export const qcmcGalleryImages = [
+  { src: '/gallery/QCMC-24/iitm1.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm2.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm3.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm4.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm5.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm6.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm7.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm8.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm9.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm10.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm11.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm12.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm13.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm14.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm15.jpg', caption: '' },
+  { src: '/gallery/QCMC-24/iitm16.jpg', caption: '' },
+]
