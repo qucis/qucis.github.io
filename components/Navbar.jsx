@@ -11,7 +11,7 @@ const desktopNavItems = [
   { href: '/team', label: 'Team' },
   { href: '/publications', label: 'Publications' },
   { href: '/funding', label: 'Funding' },
-  { href: '/gallery', label: 'Moments' },
+  { href: '/gallery', label: 'Student Showcase' },
   { href: '/resources', label: 'Career & Opportunities' },
 ]
 
@@ -20,7 +20,7 @@ const mobileNavItems = [
   { href: '/publications', label: 'Publications' },
   { href: '/team', label: 'Team' },
   { href: '/funding', label: 'Funding' },
-  { href: '/gallery', label: 'Moments' },
+  { href: '/gallery', label: 'Student Showcase' },
   { href: '/resources', label: 'Career and Opportunities' },
 ]
 
