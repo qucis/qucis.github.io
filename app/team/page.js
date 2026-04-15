@@ -1,7 +1,10 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Team = () => {
+  const [expandedImg, setExpandedImg] = useState(null);
+
   const members = [
     { id: 1, name: "Harsh Gupta", position: "PhD Student", img: "/members/phd/harsh.jpg", bio: "I love playing chess, badminton and guitar. I enjoy listening to people's stories since human interactions do not require a tensor decomposition. As an engineer open to learn anything. If I'm not lost in a matrix (the mathematical kind not the movie), you'll find me pretending to take a break while secretly running simulations in my head. Welcome to my corner of the internet, where reality is just a probability distribution." },
     { id: 2, name: "Mainak Bhattacharyya", img: "/members/phd/mainak.jpg", position: "PhD Student", bio: "Mainak is currently pursuing his PhD in the QuCIS lab. He graduated with a MSc from the Department of Physics, NIT Jamshedpur in May 2023. He was a past recipient of Chanakya PG fellowship funded by I-HUB QTF, IISER Pune. Explore his socials to know more about Mainak." },
@@ -34,7 +37,7 @@ const Team = () => {
 
         {/* Principal Investigator */}
         <div className="flex flex-col-reverse md:flex-row items-center gap-12 mb-24 bg-white/70 backdrop-blur-sm border border-cyan-100 rounded-2xl p-8 md:p-12 shadow-sm">
-          <div className="md:w-[60%]">
+          <div className="md:w-[55%]">
             <span className="text-[11px] font-semibold tracking-widest text-cyan-500 uppercase">Principal Investigator</span>
             <h2 className="font-unbounded font-bold text-2xl md:text-4xl text-slate-900 mt-2">Dr. Ankur Raina</h2>
             <p className="mt-6 font-asans text-slate-700 text-base md:text-lg leading-relaxed">
@@ -44,7 +47,12 @@ const Team = () => {
             </p>
           </div>
           <div className="flex-shrink-0">
-            <img src="/members/pi/ankur.png" className="w-[260px] md:w-[300px] rounded-2xl shadow-lg border border-cyan-100" alt="Dr. Ankur Raina" />
+            <img 
+              src="/members/pi/ankur.png" 
+              onClick={() => setExpandedImg("/members/pi/ankur.png")}
+              className="w-[320px] md:w-[380px] rounded-2xl shadow-xl border-2 border-cyan-100 cursor-zoom-in hover:scale-[1.02] transition-transform duration-300" 
+              alt="Dr. Ankur Raina" 
+            />
           </div>
         </div>
 
@@ -52,7 +60,7 @@ const Team = () => {
         <h2 className="font-unbounded font-bold text-2xl md:text-3xl text-slate-800 mb-10 border-l-4 border-cyan-500 pl-4">Current Members</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
           {members.map((m) => (
-            <MemberCard member={m} key={m.id} />
+            <MemberCard member={m} key={m.id} onZoom={() => setExpandedImg(m.img)} />
           ))}
         </div>
 
@@ -60,21 +68,54 @@ const Team = () => {
         <h2 className="font-unbounded font-bold text-2xl md:text-3xl text-slate-800 mb-10 border-l-4 border-cyan-500 pl-4">Alumni</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {alumni.map((a) => (
-            <MemberCard member={a} key={a.id} />
+            <MemberCard member={a} key={a.id} onZoom={() => setExpandedImg(a.img)} />
           ))}
         </div>
 
       </div>
+
+      {/* Zoom Modal Overlay */}
+      <AnimatePresence>
+        {expandedImg && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setExpandedImg(null)}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/90 p-4 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="relative max-w-4xl max-h-[90vh]"
+            >
+              <img src={expandedImg} className="w-full h-full object-contain rounded-lg shadow-2xl" alt="Zoomed Member" />
+              <button 
+                onClick={(e) => { e.stopPropagation(); setExpandedImg(null); }}
+                className="absolute -top-4 -right-4 bg-white text-slate-900 w-10 h-10 rounded-full flex items-center justify-center shadow-lg hover:bg-cyan-500 hover:text-white transition-colors text-xl font-bold"
+              >
+                ×
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
 
 export default Team;
 
-const MemberCard = ({ member }) => {
+const MemberCard = ({ member, onZoom }) => {
   return (
     <div className="flex gap-5 bg-white/70 backdrop-blur-sm border border-cyan-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all items-start">
-      <img src={member.img} className="w-20 h-20 rounded-xl object-cover flex-shrink-0 border border-cyan-100 shadow" alt={member.name} />
+      <img 
+        src={member.img} 
+        onClick={onZoom}
+        className="w-16 h-16 rounded-xl object-cover flex-shrink-0 border border-cyan-500/20 shadow-sm cursor-zoom-in hover:brightness-110 transition-all" 
+        alt={member.name} 
+      />
       <div>
         <h3 className="font-unbounded font-bold text-slate-900 text-base">{member.name}</h3>
         {member.position && <p className="text-cyan-600 font-asans text-sm font-medium mt-0.5">{member.position}</p>}
