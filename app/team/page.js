@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Team = () => {
   const [expandedImg, setExpandedImg] = useState(null);
+  const [selectedYear, setSelectedYear] = useState("All");
 
   const [members, setMembers] = useState([
     { id: 1, name: "Harsh Gupta", position: "PhD Student", img: "/members/phd/harsh.jpg", bio: "I love playing chess, badminton and guitar. I enjoy listening to people's stories since human interactions do not require a tensor decomposition. As an engineer open to learn anything. If I'm not lost in a matrix (the mathematical kind not the movie), you'll find me pretending to take a break while secretly running simulations in my head. Welcome to my corner of the internet, where reality is just a probability distribution." },
@@ -18,16 +19,19 @@ const Team = () => {
   ]);
 
   const alumni = [
-    { id: 3, name: "Yash Prabhat", position: "M.S. Student", img: "/members/ms/yash.png", bio: "Yash is currently working on his M.S. thesis at QuCIS lab with joint supervision of Dr. Snigdha Thakur, Department of Physics, IISER Bhopal. I am a physics major who is mesmerized by the quantum phenomenon. In my leisure, you will find me on the badminton court or playing video games. Say hi if you are around :)." },
-    { id: 1, name: "Sanidhya Gupta", position: "M.S. Student", img: "/members/alumni/sanidhya.png", bio: "Just a kid passionate about technology, particularly computers. Engineering is what I do. My experiments range from fine-tuning working codes to engaging in academic research and occasionally cooking something-something in the kitchen. Sanidhya was a past recipient of Chanakya UG and PG fellowships funded by I-HUB QTF, IISER Pune." },
-    { id: 2, name: "Anuprita V. Kulkarni", position: "M.S. Student", img: "/members/alumni/anuprita.jpg", bio: "Anuprita was a past recipient of Chanakya PG fellowship funded by I-HUB QTF, IISER Pune. She worked under joint supervision of Dr. Auditya Sharma, Department of Physics IISER Bhopal." },
-    { id: 11, name: "Pranav Maheshwari", position: "M.S. Student", img: "/members/alumni/pranav.png", bio: "A Quantum Information Researcher who loves talking about life, politics and entrepreneurship. Excited to meet new faces and waiting for you to send a Hi!" },
-    { id: 4, img: "/members/alumni/akash.png", name: "Akash Kumar Singh", bio: "Akash graduated with an MS from the Department of Physics, IISERT in May 2023. He is currently pursuing MTech degree from DIAT, Pune. In equal superposition of being at the library and badminton court." },
-    { id: 5, img: "/members/alumni/sid.png", name: "Siddharth Sethi", bio: "Siddharth graduated with an MS from the Department of EECS in May 2023. Hobbies are Photography, Videography and video-editing, Cooking, Playing Badminton." },
-    { id: 6, img: "/members/alumni/rohit.png", name: "Rohit K. Teja", bio: 'Rohit graduated with an MS from the Department of EECS in May 2023. "Books, humour, music and coffee. Occasional badminton and basketball player."' },
-    { id: 7, img: "/members/alumni/madhav.png", name: "Madhav Sharma", bio: "Madhav graduated with an MS from the Department of Physics in May 2023. He is currently with Capgemini Quantum Lab. In my free time other than reading about emerging technology and their application I like to watch movies, play volleyball and spend quality time with my friends." },
-    { id: 8, img: "/members/alumni/ss.png", name: "Swayangprabha Shaw", bio: "Swayangprabha graduated with an MS from the Department of Physics, IISERB in May 2022. She worked in the QuCIS lab as a research associate and was the recipient of Chanakya PG fellowship from i-HUB, Pune between July 2022 and April 2023. She is currently a PhD student in the Department of ECE, University of Arizona. An eccentric fellow in a heliocentric world who loves learning about people, places and physics. :D" },
+    { id: 3, year: "2024", name: "Yash Prabhat", position: "M.S. Student", img: "/members/ms/yash.png", bio: "Yash is currently working on his M.S. thesis at QuCIS lab with joint supervision of Dr. Snigdha Thakur, Department of Physics, IISER Bhopal. I am a physics major who is mesmerized by the quantum phenomenon. In my leisure, you will find me on the badminton court or playing video games. Say hi if you are around :)." },
+    { id: 1, year: "2024", name: "Sanidhya Gupta", position: "M.S. Student", img: "/members/alumni/sanidhya.png", bio: "Just a kid passionate about technology, particularly computers. Engineering is what I do. My experiments range from fine-tuning working codes to engaging in academic research and occasionally cooking something-something in the kitchen. Sanidhya was a past recipient of Chanakya UG and PG fellowships funded by I-HUB QTF, IISER Pune." },
+    { id: 2, year: "2024", name: "Anuprita V. Kulkarni", position: "M.S. Student", img: "/members/alumni/anuprita.jpg", bio: "Anuprita was a past recipient of Chanakya PG fellowship funded by I-HUB QTF, IISER Pune. She worked under joint supervision of Dr. Auditya Sharma, Department of Physics IISER Bhopal." },
+    { id: 11, year: "2024", name: "Pranav Maheshwari", position: "M.S. Student", img: "/members/alumni/pranav.png", bio: "A Quantum Information Researcher who loves talking about life, politics and entrepreneurship. Excited to meet new faces and waiting for you to send a Hi!" },
+    { id: 4, year: "2023", img: "/members/alumni/akash.png", name: "Akash Kumar Singh", bio: "Akash graduated with an MS from the Department of Physics, IISERT in May 2023. He is currently pursuing MTech degree from DIAT, Pune. In equal superposition of being at the library and badminton court." },
+    { id: 5, year: "2023", img: "/members/alumni/sid.png", name: "Siddharth Sethi", bio: "Siddharth graduated with an MS from the Department of EECS in May 2023. Hobbies are Photography, Videography and video-editing, Cooking, Playing Badminton." },
+    { id: 6, year: "2023", img: "/members/alumni/rohit.png", name: "Rohit K. Teja", bio: 'Rohit graduated with an MS from the Department of EECS in May 2023. "Books, humour, music and coffee. Occasional badminton and basketball player."' },
+    { id: 7, year: "2023", img: "/members/alumni/madhav.png", name: "Madhav Sharma", bio: "Madhav graduated with an MS from the Department of Physics in May 2023. He is currently with Capgemini Quantum Lab. In my free time other than reading about emerging technology and their application I like to watch movies, play volleyball and spend quality time with my friends." },
+    { id: 8, year: "2022", img: "/members/alumni/ss.png", name: "Swayangprabha Shaw", bio: "Swayangprabha graduated with an MS from the Department of Physics, IISERB in May 2022. She worked in the QuCIS lab as a research associate and was the recipient of Chanakya PG fellowship from i-HUB, Pune between July 2022 and April 2023. She is currently a PhD student in the Department of ECE, University of Arizona. An eccentric fellow in a heliocentric world who loves learning about people, places and physics. :D" },
   ];
+
+  const years = ["All", "2024", "2023", "2022"];
+  const filteredAlumni = selectedYear === "All" ? alumni : alumni.filter(a => a.year === selectedYear);
 
   return (
     <div className="w-full min-h-screen pt-32 pb-24 px-6">
@@ -69,13 +73,47 @@ const Team = () => {
           ))}
         </div>
 
-        {/* Alumni */}
-        <h2 className="font-unbounded font-bold text-2xl md:text-3xl text-slate-800 mb-10 border-l-4 border-cyan-500 pl-4">Alumni</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {alumni.map((a, i) => (
-            <MemberCard member={a} key={a.id || i} onZoom={() => setExpandedImg(a.img)} />
-          ))}
+        {/* Alumni Header & Filter */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 border-l-4 border-cyan-500 pl-4">
+          <h2 className="font-unbounded font-bold text-2xl md:text-3xl text-slate-800">Alumni</h2>
+          
+          <div className="flex bg-white/50 backdrop-blur-sm p-1 rounded-xl border border-cyan-100 w-fit">
+            {years.map(year => (
+              <button
+                key={year}
+                onClick={() => setSelectedYear(year)}
+                className={`px-4 py-1.5 rounded-lg font-unbounded text-[10px] md:text-xs transition-all duration-300 ${
+                  selectedYear === year 
+                  ? "bg-cyan-600 text-white shadow-md shadow-cyan-200" 
+                  : "text-slate-500 hover:text-cyan-600"
+                }`}
+              >
+                {year}
+              </button>
+            ))}
+          </div>
         </div>
+
+        {/* Alumni Grid with Animation */}
+        <motion.div 
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 min-h-[300px]"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredAlumni.map((a, i) => (
+              <motion.div
+                key={a.id || i}
+                layout
+                initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 10 }}
+                transition={{ duration: 0.3, delay: i * 0.05 }}
+              >
+                <MemberCard member={a} onZoom={() => setExpandedImg(a.img)} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
 
       </div>
 
@@ -132,7 +170,10 @@ const MemberCard = ({ member, onZoom }) => {
         />
       )}
       <div>
-        <h3 className="font-unbounded font-bold text-slate-900 text-base">{member.name}</h3>
+        <div className="flex justify-between items-start">
+          <h3 className="font-unbounded font-bold text-slate-900 text-base">{member.name}</h3>
+          {member.year && <span className="text-[10px] font-bold text-cyan-600/60 font-unbounded bg-cyan-50 px-2 py-0.5 rounded-full">{member.year}</span>}
+        </div>
         {member.position && <p className="text-cyan-600 font-asans text-sm font-medium mt-0.5">{member.position}</p>}
         <p className="font-asans text-slate-600 text-sm leading-relaxed mt-2 line-clamp-4">{member.bio}</p>
       </div>

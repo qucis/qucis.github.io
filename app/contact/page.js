@@ -35,6 +35,13 @@ const Contact = () => {
                   <span className="text-cyan-600">📞</span>
                   <span>+91 755 269 2654</span>
                 </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-600">🔗</span>
+                  <div className="flex flex-col">
+                    <span className="text-xs text-slate-500 font-medium">Where you will find the perfect fit</span>
+                    <a href="https://www.linkedin.com/in/qucis-lab-6326403b3" target="_blank" rel="noreferrer" className="text-cyan-700 font-semibold hover:underline transition-all">linkedin</a>
+                  </div>
+                </li>
               </ul>
             </div>
 
