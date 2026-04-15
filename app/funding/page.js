@@ -19,13 +19,15 @@ const FundingPage = () => {
             className="flex items-center justify-center flex-col gap-5 p-6 bg-white/70 backdrop-blur-sm border border-cyan-100 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all w-full"
           >
             <figure className="border border-cyan-100 p-3 rounded-xl bg-white shadow grid place-items-center w-[120px] h-[120px] md:w-[136px] md:h-[136px]">
-              <Image
-                src={fund.img}
-                alt={fund.title}
-                width={96}
-                height={96}
-                className="aspect-square object-contain w-[96px] h-[96px] md:w-[112px] md:h-[112px]"
-              />
+              <div className="relative w-[96px] h-[96px] md:w-[112px] md:h-[112px]">
+                <Image
+                  src={fund.img}
+                  alt={fund.title}
+                  fill
+                  sizes="(min-width: 768px) 112px, 96px"
+                  className="aspect-square object-contain"
+                />
+              </div>
             </figure>
             <h2 className="text-slate-800 text-lg md:text-xl text-center font-bold font-unbounded hover:text-cyan-600 cursor-pointer transition-colors">
               {fund.title}
