@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router';
 
 const quickLinks = [
   { label: 'About', href: "/about" },
@@ -62,13 +63,13 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-white/40 hover:text-white text-sm transition-colors inline-flex items-center gap-1 group"
                   >
                     {link.label}
                     <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -83,13 +84,13 @@ export default function Footer() {
               Interested in quantum computing research? We would love to hear from
               you if you share our vision.
             </p>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm font-medium hover:bg-orange-500/20 transition-all duration-300"
             >
               <Mail className="w-4 h-4" />
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </div>

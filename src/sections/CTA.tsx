@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router';
 
 export default function CTA() {
   return (
@@ -17,19 +18,19 @@ export default function CTA() {
           possibilities that revolutionize industries and improve lives.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="group px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-medium hover:shadow-[0_0_40px_-10px_rgba(249,115,22,0.5)] hover:scale-105 transition-all duration-300 inline-flex items-center gap-2"
           >
             Contact the Lab
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a
-            href="/careers"
+          </Link>
+          <Link
+            to="/careers"
             className="px-8 py-4 rounded-full border border-white/20 text-white/70 font-medium hover:bg-white/5 hover:border-white/30 transition-all duration-300"
           >
             Career &amp; Opportunities
-          </a>
+          </Link>
         </div>
       </div>
     </section>

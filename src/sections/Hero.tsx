@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router';
 // ChevronDown import removed as it's commented out in the component
 
 export default function Hero() {
@@ -57,26 +58,26 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="/publications"
+          <Link
+            to="/publications"
             className="px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-medium hover:shadow-[0_0_40px_-10px_rgba(249,115,22,0.5)] hover:scale-105 transition-all duration-300"
           >
             Discover Our Work
-          </a>
-          <a
-            href="/team"
+          </Link>
+          <Link
+            to="/team"
             className="px-8 py-4 rounded-full border border-white/20 text-white/80 font-medium hover:bg-white/5 hover:border-white/30 transition-all duration-300"
           >
             Meet the Team
-          </a>
+          </Link>
         </div>
       </div>
       {/* Scroll indicator */}
       {/*       
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <a href="#about" className="text-white/30 hover:text-white/60 transition-colors">
+        <Link to="#about" className="text-white/30 hover:text-white/60 transition-colors">
           <ChevronDown className="w-8 h-8" />
-        </a>
+        </Link>
       </div> */}
 
     </section>
