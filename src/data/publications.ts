@@ -1,4 +1,6 @@
-export const journalPublications = [
+import type { Publication } from '../types';
+
+export const journalPublications: Publication[] = [
   { id: 1, title: 'M. Mallapur, R. Raj and A. Raina, "Genetic optimization of ansatz expressibility for enhanced variational quantum algorithm performance" Phys. Rev. A 113, 032437, 2026', link: 'https://journals.aps.org/pra/abstract/10.1103/812w-ytnb' },
   { id: 2, title: 'M. Bhattacharyya and A. Raina, "Quantum Approximation Optimization Algorithm for the trellis based Viterbi decoding of classical error correcting codes", Quantum Info. Proc. vol. 25, article 52, 2026.', link: 'https://link.springer.com/article/10.1007/s11128-026-05074-8' },
   { id: 3, title: 'A. V. Kulkarni, V. Tiwari, A. Sharma, A. Raina, "Photonic Simulation of Localization Phenomena Using Boson Sampling" (Accepted in Phys.Rev. A 2025)', link: 'https://arxiv.org/abs/2410.13938' },
@@ -12,7 +14,7 @@ export const journalPublications = [
   { id: 11, title: 'A. Raina and S. S. Garani, "Recovery from an eavesdropping attack on a qubit of a graph state", Quantum Info. Proc., vol. 18, no. 9, article 274, Sep. 2019.', link: 'https://link.springer.com/article/10.1007/s11128-019-2387-2' },
 ]
 
-export const conferenceProceedings = [
+export const conferenceProceedings: Publication[] = [
   { id: 1, title: 'R. Raj, Kshitij Durge, M. Mallapur, R. T. Kumar and A. Raina, "Generating probability distributions using variational quantum circuits" accepted in Quantum Computing - Artificial Intelligence for Industry Applications and Scientific Discovery workshop at International Conference on Quantum Communications, Networking, and Computing (QCNC 2026), Kobe Japan, April 2026.', link: 'https://arxiv.org/abs/2307.09147' },
   { id: 2, title: 'S. Gupta, and A. Raina, "A feed-forward method for encoding a stabilizer code using Measurement-based Quantum Computing", QADA Workshop at IEEE QCE, Montréal, Sep 2024.', link: '' },
   { id: 3, title: 'P. Maheshwari and A. Raina, "Fault-tolerance of the [[8,1,3]] non-CSS code", QuIK workshop at IEEE ISIT, Athens, July 2024.', link: '' },
@@ -29,7 +31,7 @@ export const conferenceProceedings = [
   { id: 14, title: 'A. Raina and S. G. Srinivasa, "Quantum Communication Over Bit Flip Channels Using Entangled Bipartite and Tripartite States", 52nd Annual Allerton Conference, October 2014.', link: '' },
 ]
 
-export const preprints = [
+export const preprints: Publication[] = [
   { id: 1, title: 'A. Patra and A. Raina, "Pulse Shaping for Superconducting Qubits"', link: 'https://arxiv.org/abs/2604.21565' },
   { id: 2, title: 'H. Gupta, M. Bhattacharyya, R. Jain and A. Raina, "Fault-tolerant syndrome extraction in [[n,1,3]] non-CSS code family generated using measurements on graph states"', link: 'https://arxiv.org/abs/2501.12072' },
   { id: 3, title: 'M. Bhattacharyya and A. Raina, "Decoding Quantum LDPC Codes using Collaborative Check Node Removal"', link: '' },
@@ -41,7 +43,7 @@ export const preprints = [
   { id: 9, title: 'S. Shaw, H. Gupta, S. M. Shah, A. Raina, "Construction of non-CSS quantum codes using measurements on cluster states"', link: '' },
 ]
 
-export const posters = [
+export const posters: Publication[] = [
   { id: 1, title: 'S. Gupta and A. Raina, "A feed-forward method for encoding a Stabilizer Code using MBQC", QCMC, IIT Madras', link: '' },
   { id: 2, title: 'H. Gupta and A. Raina, "Construction of [[n, 1, d]] non-CSS code family via measurements on graph states", QCMC, IIT Madras', link: '' },
   { id: 3, title: 'S. Shaw, H. Gupta, S. M. Shah, A. Raina, "Construction of non-CSS quantum codes using measurements on cluster states", TQC 2023, Portugal', link: '' },

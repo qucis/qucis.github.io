@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+// ChevronDown import removed as it's commented out in the component
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);

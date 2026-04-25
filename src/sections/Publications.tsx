@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { journalPublications, conferenceProceedings, preprints, posters } from '../data/publications';
+import type { Publication } from '../types';
 import { ExternalLink, BookOpen, Presentation, FileText, Bookmark } from 'lucide-react';
 
 const categories = [
@@ -106,7 +107,7 @@ export default function Publications() {
               </div>
 
               <div className="space-y-4">
-                {category.data.map((pub, index) => (
+                {category.data.map((pub: Publication, index: number) => (
                   <a
                     key={pub.id}
                     href={pub.link || '#'}

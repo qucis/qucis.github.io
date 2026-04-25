@@ -1,18 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { showcaseItems } from '../data/showcase';
+import type { ShowcaseItem } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ExternalLink, CalendarDays } from 'lucide-react';
 
-type ShowcaseItem = {
-  id: string;
-  date: string;
-  title: string;
-  shortDesc: string;
-  fullDesc: React.ReactNode;
-  images: string[];
-  link?: string;
-  linkText?: string;
-};
+// Local type removed, using imported one
 
 function ImageCarousel({ images, title }: { images: string[]; title: string }) {
   const [current, setCurrent] = useState(0);
@@ -174,7 +166,7 @@ export default function Showcase() {
 
         {/* Event Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {(showcaseItems as ShowcaseItem[]).map((item, index) => (
+          {showcaseItems.map((item: ShowcaseItem, index: number) => (
             <motion.div
               key={item.id}
               className={`group cursor-pointer bg-white/[0.03] border border-white/[0.08] rounded-2xl overflow-hidden hover:border-cyan-500/30 transition-all duration-500 ${

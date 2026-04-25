@@ -1,6 +1,8 @@
-import React from 'react';
+// React import removed as it's not directly used
 
-export const showcaseItems = [
+import type { ShowcaseItem } from '../types';
+
+export const showcaseItems: ShowcaseItem[] = [
   {
     id: 'eecs-symposium',
     date: 'March 2026',

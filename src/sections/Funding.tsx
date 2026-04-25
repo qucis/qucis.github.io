@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { fundingSources } from '../data/funding';
+import type { FundingSource } from '../types';
 
 export default function Funding() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -43,7 +44,7 @@ export default function Funding() {
 
         {/* Funding Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {fundingSources.map((source, index) => (
+          {fundingSources.map((source: FundingSource, index: number) => (
             <div
               key={source.id}
               className={`group flex flex-col items-center justify-center gap-6 bg-white/[0.03] border border-white/[0.08] rounded-2xl p-8 hover:border-orange-500/30 hover:bg-white/[0.06] transition-all duration-500 ${

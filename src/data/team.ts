@@ -1,4 +1,6 @@
-export const currentMembers = [
+import type { TeamMember } from '../types';
+
+export const currentMembers: TeamMember[] = [
   { id: 1, group: 'phd', name: 'Harsh Gupta', position: 'PhD Student', img: '/members/phd/harsh.jpg', bio: "Harsh loves playing chess, badminton, and guitar. He enjoys listening to people's stories, as human interactions do not require tensor decomposition. As an engineer open to learning anything, he is often found pretending to take a break while secretly running simulations in his head. In his corner of the internet, reality is treated as a probability distribution." },
   { id: 2, group: 'phd', name: 'Mainak Bhattacharyya', img: '/members/phd/mainak.jpg', position: 'PhD Student', bio: 'Mainak is currently pursuing his PhD in the QuCIS lab. He graduated with a MSc from the Department of Physics, NIT Jamshedpur in May 2023. He was a past recipient of Chanakya PG fellowship funded by I-HUB QTF, IISER Pune. Explore his socials to know more about Mainak.' },
   { id: 6, group: 'phd', name: 'Suprabhat Sinha', position: 'PhD Student', img: '/members/phd/suprabhat.png', bio: 'Curious by nature, Suprabhat enjoys reading books, spending quiet moments with nature, listening to music, and engaging in thoughtful discussion. He strongly believes that quality sleep is an essential habit for clear thinking and creativity.' },
@@ -13,7 +15,7 @@ export const currentMembers = [
   { id: 14, group: 'project', name: 'Soorya S', position: 'Project', img: '/members/project/soorya.png', bio: 'Soorya holds an MSc in Physics, with thesis work focused on quantum information and quantum communication. He is currently contributing to the development of a quantum network simulator within the group. His research interests lie at the interface of physics and computation, driven by a passion for designing innovative solutions and tackling complex research problems. He enjoys long solo walks, traveling, and exploring cinema across genres.' },
 ]
 
-export const alumniMembers = [
+export const alumniMembers: TeamMember[] = [
   { id: 3, year: '2025', name: 'Yash Prabhat', position: 'M.S. Student', img: '/members/ms/yash.png', bio: 'Yash worked on his M.S. thesis at QuCIS lab under the joint supervision of Dr. Snigdha Thakur, Department of Physics, IISER Bhopal. A physics major fascinated by quantum phenomena, he spent his leisure time on the badminton court or playing video games.'},
   { id: 1, year: '2024', name: 'Sanidhya Gupta', position: 'M.S. Student', img: '/members/alumni/sanidhya.png', bio: 'Sanidhya is passionate about technology, particularly computers. His work ranges from fine-tuning working code to engaging in academic research, with occasional experimentation in the kitchen. He was a past recipient of Chanakya UG and PG fellowships funded by I-HUB QTF, IISER Pune.' },
   { id: 2, year: '2024', name: 'Anuprita V. Kulkarni', position: 'M.S. Student', img: '/members/alumni/anuprita.jpg', bio: 'Anuprita was a past recipient of Chanakya PG fellowship funded by I-HUB QTF, IISER Pune. She worked under joint supervision of Dr. Auditya Sharma, Department of Physics IISER Bhopal.' },

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
 import { currentMembers, alumniMembers, alumniYears } from '../data/team';
+import type { TeamMember } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const currentMemberGroups = [
@@ -16,14 +17,14 @@ export default function Team() {
   const groupedCurrentMembers = useMemo(() => {
     return currentMemberGroups.map((group) => ({
       ...group,
-      members: currentMembers.filter((member) => member.group === group.key),
+      members: currentMembers.filter((member: TeamMember) => member.group === group.key),
     }));
   }, []);
 
   const filteredAlumni = useMemo(() => {
     return selectedYear === 'All' 
       ? alumniMembers 
-      : alumniMembers.filter((alumnus) => alumnus.year === selectedYear);
+      : alumniMembers.filter((alumnus: TeamMember) => alumnus.year === selectedYear);
   }, [selectedYear]);
 
   useEffect(() => {
@@ -77,7 +78,7 @@ export default function Team() {
                   {group.title}
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                  {group.members.map((member, index) => (
+                  {group.members.map((member: TeamMember, index: number) => (
                     <div
                       key={member.id}
                       className={`group relative bg-white/[0.03] border border-white/[0.08] rounded-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-500 ${
@@ -116,7 +117,7 @@ export default function Team() {
             <h2 className="text-2xl md:text-3xl font-bold text-white">Alumni</h2>
 
             <div className="flex bg-white/5 backdrop-blur-sm p-1 rounded-xl border border-white/10 w-fit">
-              {alumniYears.map((year) => (
+              {alumniYears.map((year: string) => (
                 <button
                   key={year}
                   onClick={() => setSelectedYear(year)}
@@ -134,7 +135,7 @@ export default function Team() {
 
           <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 min-h-[300px]">
             <AnimatePresence mode="popLayout">
-              {filteredAlumni.map((alumnus, index) => (
+              {filteredAlumni.map((alumnus: TeamMember, index: number) => (
                 <motion.div
                   key={alumnus.id || index}
                   layout
