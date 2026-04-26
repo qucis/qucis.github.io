@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center group">
           <img
-            src="/logo.png"
+            src="/logo.webp"
             alt="QuCIS Logo"
             className="h-20 w-auto object-contain brightness-110 group-hover:scale-105 transition-transform duration-300"
           />
