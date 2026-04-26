@@ -36,18 +36,24 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <a
                 href="https://github.com/qucis"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a
                 href="https://www.linkedin.com/company/qucis"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href="mailto:ankur@iiserb.ac.in"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all"
               >
                 <Mail className="w-5 h-5" />
