@@ -5,7 +5,7 @@ const quickLinks = [
   { label: 'About', href: "/about" },
   { label: 'Team', href: "/team" },
   { label: 'Publications', href: "/publications" },
-  { label: 'Student Showcase', href: "/showcase" },
+  { label: 'QuCIS Moments', href: "/showcase" },
   { label: 'Contact', href: "/contact" },
 ];
 
@@ -19,16 +19,16 @@ export default function Footer() {
           <div>
             <div className="flex items-center mb-4">
               <img 
-                src="/logo.png" 
+                src="/logo_correct.png" 
                 alt="QuCIS Logo" 
-                className="h-20 w-auto object-contain brightness-110"
+                className="ml-2 h-[4.8rem] w-auto object-contain brightness-110"
               />
             </div>
             <p className="text-white/40 text-sm leading-relaxed mb-6">
               Quantum Computing and Information Systems Lab @{' '}
               <a
                 href="https://www.iiserb.ac.in/"
-                className="text-cyan-400 hover:text-cyan-300 transition-colors"
+                className="text-cyan-400 hover:text-cyan-300 transition-colors whitespace-nowrap"
               >
                 IISER Bhopal
               </a>
@@ -37,7 +37,7 @@ export default function Footer() {
               <a
                 href="https://github.com/qucis"
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all"
               >
                 <Github className="w-5 h-5" />
@@ -45,7 +45,7 @@ export default function Footer() {
               <a
                 href="https://www.linkedin.com/company/qucis"
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all"
               >
                 <Linkedin className="w-5 h-5" />
@@ -53,7 +53,7 @@ export default function Footer() {
               <a
                 href="mailto:ankur@iiserb.ac.in"
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all"
               >
                 <Mail className="w-5 h-5" />
@@ -105,11 +105,18 @@ export default function Footer() {
       <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/25 text-xs">
-            &copy; 2025 QuCIS. All Rights Reserved.
+            &copy; 2026 QuCIS. All Rights Reserved.
           </p>
-          <p className="text-white/50 text-xs">
-            Maintained and developed by{' '}
-            <span className="text-orange-400/60">Harsh Gupta</span>
+          <p className="text-white/35 text-xs">
+            <span className="text-white/50">Maintained and developed by</span>{' '}
+            <a
+              href="https://github.com/harshqec"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-orange-400/70 hover:text-orange-300 transition-colors"
+            >
+              Harsh Gupta
+            </a>
           </p>
         </div>
       </div>

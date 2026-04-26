@@ -157,7 +157,7 @@ export default function Showcase() {
             Lab Life
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Student <span className="text-gradient">Showcase</span>
+            QuCIS <span className="text-gradient">Moments</span>
           </h2>
           <p className="text-white/60 max-w-2xl mx-auto text-lg">
             Highlights from our lab's events, workshops, conferences, and student achievements.

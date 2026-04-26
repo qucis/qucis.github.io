@@ -6,7 +6,7 @@ const navLinks = [
   { label: 'About', href: '/about' },
   { label: 'Team', href: '/team' },
   { label: 'Publications', href: '/publications' },
-  { label: 'Showcase', href: '/showcase' },
+  { label: 'QuCIS Moments', href: '/showcase' },
   { label: 'Funding', href: '/funding' },
   { label: 'Career & Opportunities', href: '/careers' },
 ];
@@ -29,12 +29,12 @@ export default function Navbar() {
         }`}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e17]/80 to-transparent pointer-events-none" />
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
         <Link to="/" className="flex items-center group">
           <img
-            src="/logo.webp"
+            src="/logo_correct.png"
             alt="QuCIS Logo"
-            className="h-20 w-auto object-contain brightness-110 group-hover:scale-105 transition-transform duration-300"
+            className="ml-2 h-[5.6rem] w-auto object-contain brightness-110 group-hover:scale-105 transition-transform duration-300"
           />
         </Link>
 

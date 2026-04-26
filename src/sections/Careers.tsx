@@ -5,9 +5,9 @@ const opportunities = [
   {
     icon: GraduationCap,
     title: 'PhD Positions',
-    status: 'No open positions',
-    statusColor: 'text-white/40',
-    desc: 'Currently, there are no open PhD positions in our lab. However, we encourage motivated candidates to reach out as positions open regularly.',
+    status: '1 open position (NQM)',
+    statusColor: 'text-emerald-400',
+    desc: 'We currently have one open PhD position under the National Quantum Mission (NQM). Interested candidates are encouraged to apply and reach out with their CV and research interests.',
     color: 'text-cyan-400',
     bg: 'bg-cyan-500/10',
     border: 'hover:border-cyan-500/30',
