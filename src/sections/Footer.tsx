@@ -107,7 +107,7 @@ export default function Footer() {
           <p className="text-white/25 text-xs">
             &copy; 2025 QuCIS. All Rights Reserved.
           </p>
-          <p className="text-white/25 text-xs">
+          <p className="text-white/50 text-xs">
             Maintained and developed by{' '}
             <span className="text-orange-400/60">Harsh Gupta</span>
           </p>
