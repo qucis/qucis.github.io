@@ -81,7 +81,7 @@ export default function Contact() {
                 <div>
                   <p className="text-xs text-white/40 font-medium uppercase tracking-wider mb-1">LinkedIn</p>
                   <a
-                    href="https://www.linkedin.com/in/qucis-lab-6326403b3"
+                    href="https://www.linkedin.com/company/qucis"
                     target="_blank"
                     rel="noreferrer"
                     className="text-cyan-400 hover:text-cyan-300 font-semibold text-sm transition-colors duration-200 flex items-center gap-1"
