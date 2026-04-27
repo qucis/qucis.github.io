@@ -69,7 +69,7 @@ export default function Team() {
             Meet the <span className="text-gradient">Team</span>
           </h2>
           <p className="text-white/60 max-w-2xl mx-auto text-lg">
-            The brilliant minds driving quantum innovation forward.
+            Efforts focused on advancing quantum research.
           </p>
         </div>
 
