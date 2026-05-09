@@ -44,25 +44,6 @@ export const showcaseItems: ShowcaseItem[] = [
     ]
   },
   {
-    id: 'iisc-prof',
-    date: 'February 2026',
-    title: 'Visit by Prof. Shayan Srinivasa Garani & Ujjain Trip',
-    shortDesc: 'Hosted Prof. Shayan Srinivasa Garani (IISc) for a research talk, followed by a cultural visit to Ujjain.',
-    fullDesc: (
-      <div className="space-y-4">
-        <p>
-          In February 2026, our lab had the privilege of hosting Prof. Shayan Garani for a research talk. Beyond the academic discussions, we took a short but memorable trip to Ujjain, exploring its rich cultural and spiritual heritage.
-        </p>
-      </div>
-    ),
-    images: [
-      '/images/events/iisc_prof_1_full.webp',
-      '/images/events/iisc_prof_2_full.webp',
-      '/images/events/iisc_prof_3_full.webp',
-      '/images/events/iisc_prof_4_full.webp'
-    ]
-  },
-  {
     id: 'igstc-fellowship-2025',
     date: 'Aug 2025 - Dec 2025',
     title: 'Mainak Bhattacharyya - IGSTC Industrial Fellowship',
@@ -123,6 +104,25 @@ export const showcaseItems: ShowcaseItem[] = [
     images: [
       '/images/events/nptel_2025_1_full.webp',
       '/images/events/nptel_2025_2_full.webp'
+    ]
+  },
+  {
+    id: 'iisc-prof',
+    date: 'February 2025',
+    title: 'Visit by Prof. Shayan Srinivasa Garani & Ujjain Trip',
+    shortDesc: 'Hosted Prof. Shayan Srinivasa Garani (IISc) for a research talk, followed by a cultural visit to Ujjain.',
+    fullDesc: (
+      <div className="space-y-4">
+        <p>
+          In February 2025, our lab had the privilege of hosting Prof. Shayan Garani for a research talk. Beyond the academic discussions, we took a short but memorable trip to Ujjain, exploring its rich cultural and spiritual heritage.
+        </p>
+      </div>
+    ),
+    images: [
+      '/images/events/iisc_prof_1_full.webp',
+      '/images/events/iisc_prof_2_full.webp',
+      '/images/events/iisc_prof_3_full.webp',
+      '/images/events/iisc_prof_4_full.webp'
     ]
   },
   {

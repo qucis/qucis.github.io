@@ -2,59 +2,116 @@ import { useEffect, useRef, useState } from 'react';
 import { showcaseItems } from '../data/showcase';
 import type { ShowcaseItem } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight, ExternalLink, CalendarDays } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, ExternalLink, CalendarDays, Maximize2 } from 'lucide-react';
 
 // Local type removed, using imported one
 
+function FullScreenImageViewer({ image, title, onClose }: { image: string; title: string; onClose: () => void }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+      className="fixed inset-0 z-[150] flex items-center justify-center bg-black/95 backdrop-blur-sm p-4"
+    >
+      <motion.div
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.95, opacity: 0 }}
+        onClick={(e) => e.stopPropagation()}
+        className="relative max-w-5xl max-h-[90vh] flex items-center justify-center"
+      >
+        <img
+          src={image}
+          alt={title}
+          className="max-w-full max-h-full object-contain rounded-lg"
+        />
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 transition-all duration-200"
+        >
+          <X className="w-6 h-6" />
+        </button>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 function ImageCarousel({ images, title }: { images: string[]; title: string }) {
   const [current, setCurrent] = useState(0);
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
 
   const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
   const next = () => setCurrent((c) => (c + 1) % images.length);
 
   return (
-    <div className="relative rounded-xl overflow-hidden bg-black/30 aspect-video">
-      <AnimatePresence mode="wait">
-        <motion.img
-          key={current}
-          src={images[current]}
-          alt={`${title} - image ${current + 1}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
-          className="w-full h-full object-cover"
-        />
-      </AnimatePresence>
+    <>
+      <div className="relative rounded-xl overflow-hidden bg-black/30 w-full max-w-2xl mx-auto">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="relative bg-black/50 rounded-xl overflow-hidden"
+            style={{ aspectRatio: '16/9' }}
+          >
+            <img
+              src={images[current]}
+              alt={`${title} - image ${current + 1}`}
+              className="w-full h-full object-contain"
+            />
+            <button
+              onClick={() => setFullscreenImage(images[current])}
+              className="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 transition-all duration-200 z-10"
+              title="View original size"
+            >
+              <Maximize2 className="w-4 h-4" />
+            </button>
+          </motion.div>
+        </AnimatePresence>
 
-      {images.length > 1 && (
-        <>
-          <button
-            onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 transition-all duration-200"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <button
-            onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 transition-all duration-200"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-            {images.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                  i === current ? 'bg-white scale-125' : 'bg-white/40'
-                }`}
-              />
-            ))}
-          </div>
-        </>
-      )}
-    </div>
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={prev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 transition-all duration-200"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 transition-all duration-200"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+              {images.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                    i === current ? 'bg-white scale-125' : 'bg-white/40'
+                  }`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+      
+      <AnimatePresence>
+        {fullscreenImage && (
+          <FullScreenImageViewer
+            image={fullscreenImage}
+            title={title}
+            onClose={() => setFullscreenImage(null)}
+          />
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
