@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
-import { currentMembers, alumniMembers, alumniYears } from '../data/team';
+import { currentMembers, alumniMembers, alumniYears, alumniProjectMembers, alumniProjectYears } from '../data/team';
 import type { TeamMember } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -16,6 +16,7 @@ export default function Team() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [selectedYear, setSelectedYear] = useState('All');
+  const [selectedProjectYear, setSelectedProjectYear] = useState('All');
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
 
   const groupedCurrentMembers = useMemo(() => {
@@ -30,6 +31,12 @@ export default function Team() {
       ? alumniMembers 
       : alumniMembers.filter((alumnus: TeamMember) => alumnus.year === selectedYear);
   }, [selectedYear]);
+
+  const filteredProjectAlumni = useMemo(() => {
+    return selectedProjectYear === 'All' 
+      ? alumniProjectMembers 
+      : alumniProjectMembers.filter((alumnus: TeamMember) => alumnus.year === selectedProjectYear);
+  }, [selectedProjectYear]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -178,6 +185,70 @@ export default function Team() {
           <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 min-h-[300px]">
             <AnimatePresence mode="popLayout">
               {filteredAlumni.map((alumnus: TeamMember, index: number) => (
+                <motion.div
+                  key={alumnus.id || index}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: 10 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  className="group relative bg-white/[0.03] border border-white/[0.08] rounded-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-500"
+                >
+                  <div className="p-4 bg-black/20">
+                    <div className="flex items-start gap-4">
+                      <button
+                        type="button"
+                        onClick={() => setSelectedImage({ src: alumnus.img, alt: alumnus.name })}
+                        className="shrink-0 rounded-lg overflow-hidden border border-white/10 hover:border-cyan-500/40 transition-colors cursor-zoom-in"
+                        aria-label={`Open full-size image of ${alumnus.name}`}
+                      >
+                        <img
+                          src={alumnus.img}
+                          alt={alumnus.name}
+                          className="w-16 h-16 object-cover"
+                        />
+                      </button>
+                      <div className="min-w-0">
+                        <h3 className="text-base font-bold text-white mb-1 leading-tight">{alumnus.name}</h3>
+                        <p className="text-cyan-400/80 text-xs font-medium mb-3">{alumnus.year} • {alumnus.position}</p>
+                        <p className="text-white/60 text-xs leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                          {alumnus.bio}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e17] via-transparent to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none" />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+
+        {/* Alumni Project Students Section */}
+        <div className={`mt-24 transition-all duration-1000 delay-300 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 border-l-4 border-cyan-500 pl-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Alumni - Project Students</h2>
+
+            <div className="flex bg-white/5 backdrop-blur-sm p-1 rounded-xl border border-white/10 w-fit">
+              {alumniProjectYears.map((year: string) => (
+                <button
+                  key={year}
+                  onClick={() => setSelectedProjectYear(year)}
+                  className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-all duration-300 ${
+                    selectedProjectYear === year
+                      ? 'bg-cyan-600 text-white shadow-md shadow-cyan-500/20'
+                      : 'text-white/50 hover:text-cyan-400'
+                  }`}
+                >
+                  {year}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 min-h-[150px]">
+            <AnimatePresence mode="popLayout">
+              {filteredProjectAlumni.map((alumnus: TeamMember, index: number) => (
                 <motion.div
                   key={alumnus.id || index}
                   layout

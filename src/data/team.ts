@@ -31,3 +31,7 @@ export const alumniMembers: TeamMember[] = [
 ]
 
 export const alumniYears = ['All', '2025', '2024', '2023', '2022']
+
+export const alumniProjectMembers: TeamMember[] = []
+
+export const alumniProjectYears = ['All']
