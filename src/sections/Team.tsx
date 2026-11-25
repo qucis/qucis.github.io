@@ -334,9 +334,9 @@ export default function Team() {
           visible={visible}
         />
 
-        {/* Alumni Project Section */}
+        {/* Former Project Staff Section */}
         <AlumniSection
-          title="Alumni Project"
+          title="Former Project Staff"
           members={filteredProjectAlumni}
           years={alumniProjectYears}
           selectedYear={selectedProjectYear}
