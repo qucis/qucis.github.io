@@ -4,7 +4,7 @@ export interface TeamMember {
   id: number | string;
   name: string;
   position: string;
-  img: string;
+  img?: string;
   bio: string;
   group?: string;
   year?: string;
