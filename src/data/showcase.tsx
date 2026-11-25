@@ -4,6 +4,25 @@ import type { ShowcaseItem } from '../types';
 
 export const showcaseItems: ShowcaseItem[] = [
   {
+    id: 'open-house-2026',
+    date: 'October 10, 2026',
+    title: 'Open House 2026',
+    shortDesc: "Glimpses from our group's stall at IISER Bhopal’s Open House 2026. We introduced young learners to the world of quantum computing and communication, highlighting both frontier research in the field and India's rapidly growing quantum ecosystem.",
+    fullDesc: (
+      <div className="space-y-4">
+        <p>
+          Glimpses from our group&apos;s stall at IISER Bhopal&apos;s Open House 2026 on October 10, 2026. We introduced young learners to the world of quantum computing and communication, highlighting both frontier research in the field and India&apos;s rapidly growing quantum ecosystem.
+        </p>
+      </div>
+    ),
+    images: [
+      '/images/events/open_house_2026_1.webp',
+      '/images/events/open_house_2026_2.gif',
+      '/images/events/open_house_2026_3.webp',
+      '/images/events/open_house_2026_4.webp'
+    ]
+  },
+  {
     id: 'eecs-symposium',
     date: 'March 2026',
     title: 'EECS Symposium 2026',
@@ -41,6 +60,30 @@ export const showcaseItems: ShowcaseItem[] = [
       '/images/events/eecs_symposium_2026_6.webp',
       '/images/events/eecs_symposium_2026_7.webp',
       '/images/events/eecs_symposium_2026_8.webp'
+    ]
+  },
+  {
+    id: 'qucis-new-year-outing-2026',
+    date: 'January 2026',
+    title: 'Qucis Lab’s New Year Outing',
+    shortDesc: 'We kicked off the new year with a bowling outing for the whole Qucis lab. We cheered each other on at the lanes, then headed to DB Mall for dinner together. Everyone enjoyed the chance to catch up outside the lab and start the year with a few laughs.',
+    fullDesc: (
+      <div className="space-y-4">
+        <p>
+          We kicked off the new year with a bowling outing for the whole Qucis lab. We cheered each other on at the lanes, then headed to DB Mall for dinner together. Everyone enjoyed the chance to catch up outside the lab and start the year with a few laughs.
+        </p>
+      </div>
+    ),
+    images: [
+      new URL('../../images/events/outing_2026_1.gif', import.meta.url).href,
+      new URL('../../images/events/outing_2026_2.gif', import.meta.url).href,
+      new URL('../../images/events/outing_2026_01.webp', import.meta.url).href,
+      new URL('../../images/events/outing_2026_02.webp', import.meta.url).href,
+      new URL('../../images/events/outing_2026_03.webp', import.meta.url).href,
+      new URL('../../images/events/outing_2026_04.webp', import.meta.url).href,
+      new URL('../../images/events/outing_2026_05.webp', import.meta.url).href,
+      new URL('../../images/events/outing_2026_06.webp', import.meta.url).href,
+      new URL('../../images/events/outing_2026_10.webp', import.meta.url).href
     ]
   },
   {
